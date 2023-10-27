@@ -36,3 +36,31 @@ Alguns comandos de terminais úteis para a produção dessa aplicação:
 npm i typescript @types/node tsx tsup -D;
 - Cria o arquivo tsconfig.json:
 npx tsc --init;
+- O prisma inicia a conexão com o banco de dados:
+npx prisma init;
+- Colocar a formatação automática do PRISMA no settings.json:
+"[prisma]": {
+        "editor.formatOnSave": true
+};
+- Criar de forma automatizada a tipagem da tabela (schema):
+npx prisma generate;
+- Instalar a dependência de produção para acessar o banco de dados:
+npm i @prisma/client;
+- Executar o docker:
+docker run --name nome-do-banco-de-dados bitnami/postgresql;
+- Executar o docker e já passar as variáveis ambientes importantes e porta na primeira run:
+docker run --name nome-do-banco-dados -e POSTGRESQL_USERNAME=dar-algum-nome-de-username -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=nome-do-banco-de-dados -p 5432:5432 bitnami/postgresql;
+- Mostrar os containers ativos:
+docker ps;
+- Mostrar todos os containers que criei em algum momento
+docker ps -a;
+- Ativar algum container:
+docker start nome-ou-id-do-conteiner;
+- Parar algum container:
+docker stop nome-ou-id-do-container;
+- Deletar algum container:
+docker rm nome-ou-id-do-container;
+- Ver os logs de algum container:
+docker logs nome-ou-id-do-container;
+- Fazer migrate no prisma (o prisma vai passar as tabelas do schema.prisma para o banco de dados):
+npx prisma migrate dev
