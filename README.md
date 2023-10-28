@@ -63,4 +63,12 @@ docker rm nome-ou-id-do-container;
 - Ver os logs de algum container:
 docker logs nome-ou-id-do-container;
 - Fazer migrate no prisma (o prisma vai passar as tabelas do schema.prisma para o banco de dados):
-npx prisma migrate dev
+npx prisma migrate dev;
+- Rodar todos os serviços do docker a partir do docker-compose.yml (-d: não mostra os logs em tempo real): 
+docker compose up -d;
+- Parar e depois deletar todos os serviços do docker a partir do docker-compose-yml:
+docker compose down;
+- Parar todos os serviços do docker a partir do docker-compose-yml:
+docker compose stop;
+- Rodar o banco de dados pelo prisma:
+npx prisma studio;
