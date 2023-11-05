@@ -21,6 +21,18 @@ model User {
   @@map("users")
 }
 
+model Gym {
+  id          String    @id @default(uuid())
+  title       String
+  description String?
+  phone       String?
+  latitude    Decimal
+  longetitude Decimal
+  CheckIn     CheckIn[]
+
+  @@map("gyms")
+}
+
 model CheckIn {
   id           String    @id @default(uuid())
   created_at   DateTime  @default(now())
@@ -33,16 +45,4 @@ model CheckIn {
   gym_id String
 
   @@map("check_ins")
-}
-
-model Gym {
-  id          String    @id @default(uuid())
-  title       String
-  description String?
-  phone       String?
-  latitude    Decimal
-  longetitude Decimal
-  CheckIn     CheckIn[]
-
-  @@map("gyms")
 }
